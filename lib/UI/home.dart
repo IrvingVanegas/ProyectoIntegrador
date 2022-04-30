@@ -1,0 +1,112 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black45,
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: SafeArea(
+          child: ListView(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(1, 1),
+                      blurRadius: 4,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ListTile(
+                  leading: Icon(Icons.search, color: Colors.grey),
+                  title: TextField(
+                    decoration: InputDecoration(
+                      hintText: "¿Que quieres hacer?",
+                        border : InputBorder.none
+                    ),
+                  ),
+                  trailing: Icon(Icons.filter_list, color: Colors.grey,),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.all(50.0),
+                child: Container(
+                  height: 340,
+                  width: 240,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(1, 1),
+                        blurRadius: 4,
+                      )
+                    ],
+                    borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset("images/patzcuaro-y-janitzio.jpg", height: 270,),
+                      Text("Patzcuaro", style: Theme.of(context).textTheme.headline4,),
+                      TextButton(
+                          onPressed: null,
+                          child: Text('Mas Informacion'),
+                        style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
+                            return states.contains(MaterialState.disabled) ? null : Colors.white;
+                          }),
+                          backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
+                            return states.contains(MaterialState.disabled) ? null : Colors.blue;
+                          }),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Image.asset("images/img.jpg", height: 270, width: 270, ),
+            ],
+          ),
+        ),
+      ),
+
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("icons/home.png", width: 26, height: 26,),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("icons/catalogo.png", width: 26, height: 26,),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("icons/viaje.png", width: 26, height: 26,),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("icons/cuenta.png", width: 26, height: 26,),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
