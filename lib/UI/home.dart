@@ -41,41 +41,79 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(height: 20,),
               Padding(
-                padding: const EdgeInsets.all(50.0),
-                child: Container(
-                  height: 340,
-                  width: 240,
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(1, 1),
-                        blurRadius: 4,
-                      )
-                    ],
-                    borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset("images/patzcuaro-y-janitzio.jpg", height: 270,),
-                      Text("Patzcuaro", style: Theme.of(context).textTheme.headline4,),
-                      TextButton(
-                          onPressed: null,
-                          child: Text('Mas Informacion'),
-                        style: ButtonStyle(
-                          foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
-                            return states.contains(MaterialState.disabled) ? null : Colors.white;
-                          }),
-                          backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
-                            return states.contains(MaterialState.disabled) ? null : Colors.blue;
-                          }),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Destacados", style: Theme.of(context).textTheme.headline4,),
               ),
+              Container(
+                height: 220,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                    itemBuilder: (_, index){
+                  return Padding(padding: const EdgeInsets.all(8),
+                  child: Container(
+                      height: 240,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              offset: Offset(1, 1),
+                              blurRadius: 4,
+                            ),
+                          ]
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                                  Image.asset("images/patzcuaro-y-janitzio.jpg", height: 140, width: 200,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Padding(padding: const EdgeInsets.all(8),
+                                        child: Text("Patzcuaro"),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.grey,
+                                                offset: Offset(1, 1),
+                                                blurRadius: 4,
+                                              ),
+                                            ],
+                                        ),
+                                        child: TextButton(
+                                          onPressed: null,
+                                          child: Text('Mas Informacion'),
+                                          style: ButtonStyle(
+                                            foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
+                                              return states.contains(MaterialState.disabled) ? null : Colors.white;
+                                            }),
+                                            backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
+                                              return states.contains(MaterialState.disabled) ? null : Colors.blue;
+                                            }),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+              ),
+              SizedBox(height: 20,),
               Image.asset("images/img.jpg", height: 270, width: 270, ),
             ],
           ),
