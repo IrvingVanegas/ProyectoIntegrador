@@ -123,7 +123,7 @@ class _CalendarState extends State<Calendar> {
 
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text(widget.title),
+          title: new Text("Seleccione los dias del tour"),
         ),
         body: SingleChildScrollView(
           child: Column(
