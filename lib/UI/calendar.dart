@@ -1,38 +1,16 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart'
     show CalendarCarousel;
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/classes/event_list.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class Calendar extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'flutter calendar',
-      theme: new ThemeData(
-
-        primarySwatch: Colors.purple,
-      ),
-      home: new MyHomePage(title: 'Selecciona los dias del Tour'),
-    );
-  }
+  _CalendarState createState() => new _CalendarState();
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _CalendarState extends State<Calendar> {
   DateTime _currentDate = DateTime(2020, 8, 3);
   DateTime _currentDate2 = DateTime(2020, 8, 4);
   String _currentMonth = DateFormat.yMMM().format(DateTime(2020, 8, 3));
