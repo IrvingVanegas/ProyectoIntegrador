@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_int/UI/home.dart';
-
+import 'package:hotel_booking_app_ui/UI/home.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

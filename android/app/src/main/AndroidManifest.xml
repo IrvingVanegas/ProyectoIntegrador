@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.proyecto_int">
+    package="com.mgogolowicz.hotel_booking_app_ui">
    <application
-        android:label="proyecto_int"
+        android:label="hotel_booking_app_ui"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

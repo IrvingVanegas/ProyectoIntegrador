@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.grey,
                       offset: Offset(1, 1),
@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
                   ],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(Icons.search, color: Colors.grey),
                   title: TextField(
                     decoration: InputDecoration(
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
                   trailing: Icon(Icons.filter_list, color: Colors.grey,),
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Destacados", style: Theme.of(context).textTheme.headline4,),
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                       height: 240,
                       width: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.red,
                           boxShadow: [
                             BoxShadow(
@@ -71,8 +71,8 @@ class _HomeState extends State<Home> {
                                   Image.asset("images/patzcuaro-y-janitzio.jpg", height: 140, width: 200,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Padding(padding: const EdgeInsets.all(8),
+                                    children: const <Widget>[
+                                      Padding(padding: EdgeInsets.all(8),
                                         child: Text("Patzcuaro"),
                                       ),
                                     ],
@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Container(
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Colors.grey,
@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
                                         ),
                                         child: TextButton(
                                           onPressed: null,
-                                          child: Text('Mas Informacion'),
+                                          child: const Text('Mas Informacion'),
                                           style: ButtonStyle(
                                             foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
                                               return states.contains(MaterialState.disabled) ? null : Colors.white;
@@ -113,7 +113,7 @@ class _HomeState extends State<Home> {
                   );
                 }),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Image.asset("images/img.jpg", height: 270, width: 270, ),
             ],
           ),
