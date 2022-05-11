@@ -1,19 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking_app_ui/UI/home.dart';
-void main() => runApp(MyApp());
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:hotel_booking_app_ui/pages/home_page.dart';
 
-class MyApp extends StatelessWidget {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(const MyApp());
+}
 
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const GetMaterialApp(
+      defaultTransition: Transition.rightToLeft,
+      transitionDuration: Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
-      title: 'Morelia Turismo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Home(),
+      title: 'Tourist Planner',
+      home: HomePage(),
     );
   }
 }
+

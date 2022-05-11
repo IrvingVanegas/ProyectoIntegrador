@@ -10,7 +10,7 @@ Row buildTopBar(Color defaultColor, Size size) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Buscar hotel en ",
+            "Buscar ",
             style: GoogleFonts.poppins(
               color: defaultColor.withOpacity(0.4),
               fontSize: size.height * 0.017,

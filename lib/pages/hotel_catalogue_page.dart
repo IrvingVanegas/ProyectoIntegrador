@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking_app_ui/widgets/bottom_nav_bar.dart';
+import 'package:hotel_booking_app_ui/widgets/home/for_you.dart';
+import 'package:hotel_booking_app_ui/widgets/home/hotel_search.dart';
 import 'package:hotel_booking_app_ui/widgets/home/top_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HotelCataloguePage extends StatefulWidget {
+  const HotelCataloguePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HotelCataloguePageState createState() => _HotelCataloguePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HotelCataloguePageState extends State<HotelCataloguePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; //check the size of device
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
-      bottomNavigationBar: buildBottomNavBar(0, size, isDarkMode),
+      bottomNavigationBar: buildBottomNavBar(1, size, isDarkMode),
       body: Center(
         child: Container(
           height: size.height,
@@ -45,14 +47,14 @@ class _HomePageState extends State<HomePage> {
                     thickness: 0.25,
                     height: size.height * 0.035,
                   ),
-
+                  buildForYou(defaultColor, size),
+                  buildHotelSearch(defaultColor, size),
                 ],
               ),
             ),
           ),
         ),
       ),
-
     );
   }
 }

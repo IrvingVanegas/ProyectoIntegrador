@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotel_booking_app_ui/pages/home_page.dart';
+import 'package:hotel_booking_app_ui/pages/hotel_catalogue_page.dart';
 import 'package:hotel_booking_app_ui/widgets/bottom_nav_item.dart';
 import 'package:unicons/unicons.dart';
 
@@ -18,7 +19,9 @@ Widget buildBottomNavBar(int currIndex, Size size, bool isDarkMode) {
     onTap: (value) {
       if (value != currIndex) {
         if (value == 0) {
-          Get.off(const HomePage());
+          Get.off(() => HomePage());
+        } else if (value == 1) {
+          Get.off(() => HotelCataloguePage());
         }
       }
     },
@@ -29,7 +32,7 @@ Widget buildBottomNavBar(int currIndex, Size size, bool isDarkMode) {
         size,
       ),
       buildBottomNavItem(
-        UniconsLine.heart,
+        UniconsLine.store,
         isDarkMode,
         size,
       ),
