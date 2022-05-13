@@ -45,7 +45,43 @@ class _HomePageState extends State<HomePage> {
                     thickness: 0.25,
                     height: size.height * 0.035,
                   ),
-
+                  Padding(
+                    padding: const EdgeInsets.all(50.0),
+                    child: Container(
+                      height: 340,
+                      width: 240,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(1, 1),
+                            blurRadius: 4,
+                          )
+                        ],
+                        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Image.asset("images/patzcuaro-y-janitzio.jpg", height: 270,),
+                          Text("Patzcuaro", style: Theme.of(context).textTheme.headline4,),
+                          TextButton(
+                            onPressed: null,
+                            child: Text('Mas Informacion'),
+                            style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
+                                return states.contains(MaterialState.disabled) ? null : Colors.white;
+                              }),
+                              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states){
+                                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+                              }),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Image.asset("images/img.jpg", height: 270, width: 270, ),
                 ],
               ),
             ),
