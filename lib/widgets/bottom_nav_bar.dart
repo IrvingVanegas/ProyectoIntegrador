@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hotel_booking_app_ui/pages/admin_profile_page.dart';
 import 'package:hotel_booking_app_ui/pages/home_page.dart';
 import 'package:hotel_booking_app_ui/pages/hotel_catalogue_page.dart';
+import 'package:hotel_booking_app_ui/pages/product_catalogue_page.dart';
 import 'package:hotel_booking_app_ui/widgets/bottom_nav_item.dart';
 import 'package:unicons/unicons.dart';
 
@@ -23,7 +24,9 @@ Widget buildBottomNavBar(int currIndex, Size size, bool isDarkMode) {
           Get.off(() => HomePage());
         } else if (value == 1) {
           Get.off(() => HotelCataloguePage());
-        } else if (value == 3) {
+        } else if (value == 2) {
+          Get.off(() => ProductCataloguePage());
+        }else if (value == 3) {
           Get.off(() => AdminProfilePage());
         }
       }
