@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'admin_table_page.dart';
 
 class AdminProfilePage extends StatefulWidget {
   const AdminProfilePage({Key? key}) : super(key: key);
@@ -48,6 +51,7 @@ class _AdminProfilePageState extends State<AdminProfilePage>{
           ListTile(
             title: Text("Gestionar Cuentas"),
             trailing: Icon(Icons.arrow_forward_ios),
+            onTap:() => Get.off(() => AdminTable()),
           ),
           ListTile(
             title: Text("Reportes"),

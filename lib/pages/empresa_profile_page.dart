@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hotel_booking_app_ui/pages/empresa_table_product_page.dart';
+import 'package:hotel_booking_app_ui/pages/empresa_table_service_page.dart';
 
 class EmpresaProfilePage extends StatefulWidget {
   const EmpresaProfilePage({Key? key}) : super(key: key);
@@ -48,10 +51,12 @@ class _EmpresaProfilePageState extends State<EmpresaProfilePage> {
           ListTile(
             title: Text("Gestionar Servicios"),
             trailing: Icon(Icons.arrow_forward_ios),
+            onTap:() => Get.off(() => EmpresaServicesTable()),
           ),
           ListTile(
             title: Text("Gestionar Productos"),
             trailing: Icon(Icons.arrow_forward_ios),
+            onTap:() => Get.off(() => EmpresaProductTable()),
           ),
           ListTile(
             title: Text("Reportes"),

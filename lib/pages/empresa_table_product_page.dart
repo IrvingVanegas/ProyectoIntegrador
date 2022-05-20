@@ -36,6 +36,14 @@ class _EmpresaProductTableState extends State<EmpresaProductTable> {
                   'Costo',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
               )),
+              DataColumn(label: Text(
+                  'Editar',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+              )),
+              DataColumn(label: Text(
+                  'Eliminar',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+              )),
             ],
             rows: [
               DataRow(cells: [
@@ -43,24 +51,48 @@ class _EmpresaProductTableState extends State<EmpresaProductTable> {
                 DataCell(Text('Playera')),
                 DataCell(Text('Si')),
                 DataCell(Text('150')),
+                DataCell(Icon(
+                  Icons.edit
+                )),
+                DataCell(Icon(
+                    Icons.delete
+                )),
               ]),
               DataRow(cells: [
                 DataCell(Text('5')),
                 DataCell(Text('Mochila')),
                 DataCell(Text('No')),
                 DataCell(Text('300')),
+                DataCell(Icon(
+                    Icons.edit
+                )),
+                DataCell(Icon(
+                    Icons.delete
+                )),
               ]),
               DataRow(cells: [
                 DataCell(Text('10')),
                 DataCell(Text('Llavero')),
                 DataCell(Text('Si')),
                 DataCell(Text('50')),
+                DataCell(Icon(
+                    Icons.edit
+                )),
+                DataCell(Icon(
+                    Icons.delete
+                )),
               ]),
               DataRow(cells: [
                 DataCell(Text('15')),
                 DataCell(Text('Traje de baño')),
                 DataCell(Text('si')),
                 DataCell(Text('200')),
+                DataCell(Icon(
+                    Icons.edit
+                )),
+                DataCell(Icon(
+                    Icons.delete
+                )),
               ]),
             ],
           ),
