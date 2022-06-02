@@ -17,11 +17,17 @@ class _AddUserPageState extends State<AddUserPage> {
   String response="";
 
   createUser() async {
-    var result = await http_post("create-user", {
-      "nombre": nameController.text,
-      "idempresa": empresaController.text,
-      "contrasena": passController.text,
-      "correo": correoController.text,
+
+    String name = nameController.text;
+    String empresa = empresaController.text;
+    String pass = passController.text;
+    String correo = correoController.text;
+
+    var result = await http_post("create-user",{
+      "nombre": name,
+      "idempresa": empresa,
+      "contrasena": pass,
+      "correo": correo,
     });
     if(result.ok){
       setState(() {

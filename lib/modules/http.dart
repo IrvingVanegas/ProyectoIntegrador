@@ -18,12 +18,9 @@ Future<RequestResult> http_get(String route, [dynamic data]) async{
 }
 
 Future<RequestResult> http_post(String route, [dynamic data]) async{
+
   var url = "$PROTOCOL://$DOMAIN/$route";
-  var datastr = jsonEncode(data);
-  var result = await http.post(Uri.parse(url), body: datastr, headers:{
-    "Content-Type":"application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
-  });
+  var dataStr = jsonEncode(data);
+  var result = await http.post(Uri.parse(url), body: dataStr, headers:{"Content-Type":"application/json"});
   return RequestResult(true, jsonDecode(result.body));
 }
