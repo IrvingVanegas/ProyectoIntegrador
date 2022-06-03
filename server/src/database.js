@@ -1,13 +1,13 @@
-const mysql         = require('mysql');
+const mysql         = require('mysql2/promise');
 const server_config = require('config');
 
 module.exports = () => {
   let config = {
-    host     : server_config.get('db.host'),
-    port     : server_config.get('db.port'),
-    user     : server_config.get('db.user'),
-    password : server_config.get('db.password'),
-    database : server_config.get('db.database'),
+    host     : server_config.get('12.0.0.1'),
+    port     : server_config.get('3306'),
+    user     : server_config.get('root'),
+    password : server_config.get(''),
+    database : server_config.get('turismo-db'),
   }
   return new Database(config)
 }
