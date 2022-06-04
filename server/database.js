@@ -3,11 +3,11 @@ const server_config = require('config');
 
 module.exports = () => {
   let config = {
-    host     : server_config.get('db.host'),
-    port     : server_config.get('db.port'),
-    user     : server_config.get('db.user'),
-    password : server_config.get('db.password'),
-    database : server_config.get('db.database'),
+    host     : server_config.get('default.host'),
+    port     : server_config.get('default.port'),
+    user     : server_config.get('default.user'),
+    password : server_config.get('default.password'),
+    database : server_config.get('default.database'),
   }
   return new Database(config)
 }
