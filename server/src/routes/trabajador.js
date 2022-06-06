@@ -2,7 +2,11 @@ const { Router } = require("express");
 const router = Router();
 const Trabajador = require('../models/Trabajador');
 
-router.post('/Agregar/Trabajador/', (req, res, next) => {
+router.get('api/Trabajador/ver', (req, res) => {
+    Trabajador.Listar(req, res);
+});
+
+router.post('api/Trabajador/agregar', (req, res, next) => {
     const {nombre} = req.body;
     const {idEmpresa} = req.body;
     const {contrasena} = req.body;
