@@ -1,7 +1,7 @@
 {
   "app": {
    "port": 4000,
-    "JWT_SECRET": ""
+    "JWT_SECRET": "claveSecreta"
   },
   "db":{
     "host": "127.0.0.1",
